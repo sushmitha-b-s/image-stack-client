@@ -7,22 +7,7 @@
 				:key="index"
 				:variation="variation"
 			>
-				<div class="images__variation">
-					<figure
-						v-for="image in variation"
-						:key="image.index"
-						:image="image"
-						class="images__figure"
-					>
-						<img
-							:src="
-								require(`../../../image-stack-server/public/storage/images/${image.name}`)
-							"
-							alt=""
-							:class="`images__layer images--${image.index}`"
-						/>
-					</figure>
-				</div>
+				<ImagesItem :imageVariation="variation" />
 			</div>
 		</div>
 	</main>
@@ -30,9 +15,13 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import ImagesItem from '@/components/ImagesItem'
 
 export default {
 	name: 'ImagesList',
+	components: {
+		ImagesItem,
+	},
 
 	created() {
 		this.$store.dispatch('images/fetch')
