@@ -1,23 +1,28 @@
 <template>
 	<main class="images__container">
 		<div class="row">
-			<div class="col">
-				col 1
-			</div>
-			<div class="col">
-				col 2
-			</div>
-			<div class="col">
-				col 3
-			</div>
-			<div class="col">
-				col 4
-			</div>
-			<div class="col">
-				col 6
-			</div>
-			<div class="col">
-				col 6
+			<div
+				class="col images__col"
+				v-for="(variation, index) in images"
+				:key="index"
+				:variation="variation"
+			>
+				<div class="images__variation">
+					<figure
+						v-for="image in variation"
+						:key="image.index"
+						:image="image"
+						class="images__figure"
+					>
+						<img
+							:src="
+								require(`../../../image-stack-server/public/storage/images/${image.name}`)
+							"
+							alt=""
+							:class="`images__layer images--${image.index}`"
+						/>
+					</figure>
+				</div>
 			</div>
 		</div>
 	</main>

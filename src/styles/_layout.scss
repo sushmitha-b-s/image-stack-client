@@ -5,7 +5,6 @@
 	flex-wrap: wrap;
 
 	.col {
-		border: 1px solid crimson;
 		margin: 2rem auto;
 		text-align: center;
 		width: calc((#{$grid-width} / 3) - 8rem);
