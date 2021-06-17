@@ -8,9 +8,17 @@
 			</li>
 		</ul>
 
-		<div class="nav__btns">
-			<button class="nav__btn">generate</button>
-			<button class="nav__btn">Add image</button>
-		</div>
+		<NavButtons />
 	</nav>
 </template>
+
+<script>
+import NavButtons from './NavButtons.vue'
+
+export default {
+	name: 'NavBar',
+	components: {
+		NavButtons,
+	},
+}
+</script>
