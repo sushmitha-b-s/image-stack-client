@@ -28,23 +28,6 @@
 	}
 
 	&__btn {
-		border: none;
-		font-family: inherit;
-		background-color: $color-primary-dark;
-		color: $color-white;
 		margin: 0 3rem;
-		padding: 1rem 2rem;
-		border-radius: 10rem;
-		text-transform: uppercase;
-		letter-spacing: 1px;
-		cursor: pointer;
-		transition: all 0.3s;
-
-		&:hover,
-		&:focus {
-			outline: none;
-			background-color: $color-primary-light;
-			transform: translateY(-2px);
-		}
 	}
 }

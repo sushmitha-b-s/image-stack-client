@@ -6,11 +6,16 @@ const apiClient = axios.create({
 })
 
 export default {
+	// Initialize csrf protection (as mentioned in docs - Laravel Sanctum)
 	setCSRFCookie() {
 		apiClient.get('/sanctum/csrf-cookie').then(res => {})
 	},
 
 	fetchImages() {
 		return apiClient.get('/images')
+	},
+
+	addImage(newImage) {
+		return apiClient.post('/images', newImage)
 	},
 }
