@@ -17,14 +17,35 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		padding: 4rem 6rem;
+		border-radius: 5px;
+		box-shadow: 0 1rem 2rem rgba($color-black, 0.3);
 		z-index: 20;
 		transition: all 0.3s;
+
+		@media only screen and (max-width: $bp-large) {
+			width: 60%;
+			padding: 2.5rem 4.5rem;
+		}
+
+		@media only screen and (max-width: $bp-medium) {
+			width: 70%;
+			padding: 2rem 4rem;
+		}
+
+		@media only screen and (max-width: $bp-small) {
+			width: 80%;
+			padding: 2rem;
+		}
 	}
 
 	&__header {
 		font-size: 2.4rem;
 		color: $color-primary-dark;
 		margin: 1rem 0 2rem;
+
+		@media only screen and (max-width: $bp-large) {
+			margin: 0.5rem 0 2rem;
+		}
 	}
 
 	&__close {
@@ -34,11 +55,10 @@
 		top: 1.5rem;
 		right: 2.5rem;
 		cursor: pointer;
-	}
 
-	&__body {
-		font-size: 1.6rem;
-		padding-left: 0;
+		@media only screen and (max-width: $bp-large) {
+			font-size: 4rem;
+		}
 	}
 }
 

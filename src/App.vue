@@ -2,21 +2,20 @@
 	<div id="app">
 		<NavBar />
 		<router-view />
-
-		<footer class="footer">
-			&copy; 2021 by ImageStack. All rights reserved.
-		</footer>
+		<Footer />
 	</div>
 </template>
 
 <script>
 import NavBar from '@/components/NavBar.vue'
+import Footer from '@/components/Footer.vue'
 import ImageService from '@/services/ImageService'
 
 export default {
 	name: 'App',
 	components: {
 		NavBar,
+		Footer,
 	},
 
 	created() {
