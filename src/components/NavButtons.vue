@@ -1,6 +1,8 @@
 <template>
 	<div class="nav__btns">
-		<button class="nav__btn btn btn--round btn--move">generate</button>
+		<button class="nav__btn btn btn--round btn--move" @click="generateImages">
+			generate
+		</button>
 		<button class="nav__btn btn btn--round btn--move" @click="openModal">
 			Add image
 		</button>
@@ -55,6 +57,10 @@ export default {
 				this.closeModal()
 				this.newImage = this.createNewImage()
 			})
+		},
+
+		generateImages() {
+			this.$store.dispatch('images/fetch')
 		},
 	},
 }
