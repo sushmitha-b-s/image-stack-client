@@ -2,6 +2,15 @@
 	&__container {
 		margin-top: 8rem;
 		min-height: 10rem;
+		margin-bottom: 10rem;
+
+		@media only screen and (max-width: $bp-medium) {
+			margin-top: 3rem;
+		}
+
+		@media only screen and (max-width: $bp-small) {
+			margin-top: 1rem;
+		}
 	}
 
 	&__default-str {
@@ -11,7 +20,6 @@
 
 	&__col {
 		height: 32rem;
-		border: 1px solid $color-grey-dark-1;
 	}
 
 	&__variation {

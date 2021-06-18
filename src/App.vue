@@ -2,6 +2,10 @@
 	<div id="app">
 		<NavBar />
 		<router-view />
+
+		<footer class="footer">
+			&copy; 2021 by ImageStack. All rights reserved.
+		</footer>
 	</div>
 </template>
 
