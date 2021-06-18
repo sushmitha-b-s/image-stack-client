@@ -59,4 +59,9 @@
 	&__btn {
 		text-align: right;
 	}
+
+	&__error {
+		color: $color-danger;
+		margin-top: 0.5rem;
+	}
 }

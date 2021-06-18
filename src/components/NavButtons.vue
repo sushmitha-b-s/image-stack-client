@@ -36,6 +36,8 @@ export default {
 
 	methods: {
 		openModal() {
+			this.newImage = this.createNewImage()
+
 			const modal = document.querySelector('.modal')
 			modal.classList.remove('hidden')
 		},
@@ -43,19 +45,19 @@ export default {
 		closeModal() {
 			const modal = document.querySelector('.modal')
 			modal.classList.add('hidden')
+
+			this.newImage = this.createNewImage()
 		},
 
 		createNewImage() {
 			return {
 				arrayIndex: '',
-				imageFile: '',
 			}
 		},
 
 		addImage(image) {
 			this.$store.dispatch('images/add', image).then(() => {
 				this.closeModal()
-				this.newImage = this.createNewImage()
 			})
 		},
 
