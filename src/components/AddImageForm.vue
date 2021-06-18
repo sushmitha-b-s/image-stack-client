@@ -15,6 +15,7 @@
 					:arrayIndex="arrayIndex"
 					:value="arrayIndex"
 					class="form__select-option"
+					:disabled="!imagesLength && index !== 0"
 				>
 					{{ arrayIndex }}
 				</option>
@@ -46,7 +47,7 @@
 				type="submit"
 				value="Add"
 				class="btn btn--rect btn--submit"
-				:disabled="!newImage.arrayIndex || !imageFile"
+				:disabled="disableSubmitBtn"
 			/>
 		</div>
 	</form>
@@ -59,6 +60,10 @@ export default {
 	props: {
 		newImage: {
 			type: Object,
+			required: true,
+		},
+		imagesLength: {
+			type: Number,
 			required: true,
 		},
 	},
@@ -74,6 +79,15 @@ export default {
 		}
 	},
 
+	computed: {
+		disableSubmitBtn() {
+			return (
+				(!this.newImage.arrayIndex && this.newImage.arrayIndex !== 0) ||
+				!this.imageFile
+			)
+		},
+	},
+
 	methods: {
 		onFileChange(e) {
 			const files = e.target.files
@@ -84,7 +98,7 @@ export default {
 		},
 
 		submit() {
-			if (!this.newImage.arrayIndex)
+			if (!this.newImage.arrayIndex && this.newImage.arrayIndex !== 0)
 				this.errors.arrayIndex = 'Please select the array index.'
 
 			if (!this.imageFile) this.errors.imageFile = 'Please choose a file.'

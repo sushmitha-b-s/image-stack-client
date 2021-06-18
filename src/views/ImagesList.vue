@@ -1,6 +1,9 @@
 <template>
 	<main class="images__container">
-		<div class="row">
+		<p class="images__default-str" v-if="imagesLength === 0">
+			&#9888; Please add one or more images to see image variations.
+		</p>
+		<div class="row" v-else>
 			<div
 				class="col images__col"
 				v-for="(variation, index) in images"
@@ -31,6 +34,10 @@ export default {
 		...mapGetters({
 			images: 'images/all',
 		}),
+
+		imagesLength() {
+			return this.images && this.images.length
+		},
 	},
 }
 </script>
