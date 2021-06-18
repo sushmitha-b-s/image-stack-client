@@ -5,10 +5,10 @@
 			Add image
 		</button>
 
-		<Modal>
+		<Modal :closeModal="closeModal">
 			<template slot="header">Add new image</template>
 			<template slot="body">
-				<AddImageForm />
+				<AddImageForm @clicked:add-image="addImage" :newImage="newImage" />
 			</template>
 		</Modal>
 	</div>
@@ -28,6 +28,7 @@ export default {
 	data() {
 		return {
 			showModal: false,
+			newImage: this.createNewImage(),
 		}
 	},
 
@@ -35,6 +36,25 @@ export default {
 		openModal() {
 			const modal = document.querySelector('.modal')
 			modal.classList.remove('hidden')
+		},
+
+		closeModal() {
+			const modal = document.querySelector('.modal')
+			modal.classList.add('hidden')
+		},
+
+		createNewImage() {
+			return {
+				arrayIndex: '',
+				imageFile: '',
+			}
+		},
+
+		addImage(image) {
+			this.$store.dispatch('images/add', image).then(() => {
+				this.closeModal()
+				this.newImage = this.createNewImage()
+			})
 		},
 	},
 }

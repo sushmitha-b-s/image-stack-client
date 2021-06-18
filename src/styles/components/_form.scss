@@ -17,7 +17,8 @@
 	}
 
 	&__select {
-		width: 25%;
+		min-width: 18rem;
+		width: 30%;
 		border: none;
 		background-color: $color-primary-dark;
 		color: $color-white;

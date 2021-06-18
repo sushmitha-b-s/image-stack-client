@@ -22,6 +22,19 @@ export const actions = {
 				console.log(err)
 			})
 	},
+
+	add({ commit }, newImage) {
+		return ImageService.addImage(newImage)
+			.then(({ data }) => {
+				//add setTimeout as the backend takes time to store the file to public folder
+				setTimeout(() => {
+					commit('SET_IMAGES', data)
+				}, 1000)
+			})
+			.catch(err => {
+				console.log(err)
+			})
+	},
 }
 
 export const getters = {

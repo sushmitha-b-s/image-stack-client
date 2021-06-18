@@ -21,12 +21,6 @@
 <script>
 export default {
 	name: 'Modal',
-
-	methods: {
-		closeModal() {
-			const modal = document.querySelector('.modal')
-			modal.classList.add('hidden')
-		},
-	},
+	props: ['closeModal'],
 }
 </script>

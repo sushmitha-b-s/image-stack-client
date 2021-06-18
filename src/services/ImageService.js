@@ -13,4 +13,8 @@ export default {
 	fetchImages() {
 		return apiClient.get('/images')
 	},
+
+	addImage(newImage) {
+		return apiClient.post('/images', newImage)
+	},
 }
