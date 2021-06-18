@@ -5,9 +5,18 @@
 	justify-content: space-between;
 	align-items: center;
 
+	@media only screen and (max-width: $bp-small) {
+		flex-direction: column;
+	}
+
 	&__list {
 		margin-left: 5rem;
 		list-style: none;
+
+		@media only screen and (max-width: $bp-small) {
+			align-self: flex-start;
+			margin: 1.5rem 2rem;
+		}
 	}
 
 	&__link {
@@ -16,6 +25,10 @@
 			text-decoration: none;
 			font-size: 3rem;
 			color: $color-primary-dark;
+
+			@media only screen and (max-width: $bp-small) {
+				font-size: 2.5rem;
+			}
 		}
 
 		&:focus {
@@ -25,9 +38,26 @@
 
 	&__btns {
 		margin-right: 5rem;
+
+		@media only screen and (max-width: $bp-small) {
+			margin-right: 0;
+			margin-bottom: 2rem;
+		}
 	}
 
 	&__btn {
-		margin: 0 3rem;
+		margin-left: 3rem;
+
+		@media only screen and (max-width: $bp-large) {
+			margin-left: 1.5rem;
+		}
+
+		@media only screen and (max-width: $bp-medium) {
+			margin-left: 0.7rem;
+		}
+
+		@media only screen and (max-width: $bp-medium) {
+			margin: auto 2rem;
+		}
 	}
 }
